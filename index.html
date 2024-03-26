@@ -22,16 +22,15 @@
         <div class="devider" class="bg-blue-700"></div>
         <div class="form-section flex flex-col">
             <label for="user" class="font-medium text-slate-800">Email</label>
-            <input type="email" name="user" id="user" placeholder="Enter your email id" required
-                class="w-full p-2 border rounded-md">
+            <input type="email" name="user" id="user" placeholder="Enter your email id" class="w-full p-2 border rounded-md" required>
         </div>
         <div class="form-section flex flex-col relative">
             <label for="password" class="font-medium text-slate-800">Password</label>
-            <input type="password" name="password" id="password" placeholder="Enter your password" required
-                class="w-full p-2 border rounded-md">
+            <input type="password" name="password" id="password" placeholder="Enter your password" class="w-full p-2 border rounded-md" required>
             <button type="button" id="btnToggle" class="toggle absolute top-[50%] left-[90%]"><i
-                    class="ri-eye-off-line"></i></button>
+                    class="ri-eye-off-line text-blue-500" id="eyeIcon"></i></button>
         </div>
+        <p id="alertText" class="text-sm"></p>
         <div class="form-check justify-between flex items-center">
             <div>
                 <input type="checkbox">
@@ -41,8 +40,8 @@
                 <p class="text-blue-700">Forgot Password?</p>
             </div>
         </div>
-        <button type="button" class="w-full bg-blue-700 text-white p-2 rounded-md">Log In</button>
-        <small class="text-center">Don't have account?<span class="text-blue-700">Signup now</span></small>
+        <button type="button" class="w-full bg-blue-700 text-white p-2 rounded-md" id="logIn">Log In</button>
+        <small class="text-center">Don't have account?<span class="text-blue-700"> Signup now</span></small>
     </form>
 
 
