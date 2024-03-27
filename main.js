@@ -10,7 +10,9 @@ let logBtn = document.getElementById("logIn");
 
 let message = document.getElementById("alertText");
 
+let logIn = document.getElementById("log-in");
 
+var successMessage = document.querySelector(".success-text");
 
 toggleButton.addEventListener("click" , function (){
     if (passwordInput.type === 'password'){
@@ -37,6 +39,11 @@ logBtn.addEventListener("click" , function(){
     else{
         message.classList.remove('text-red-800');
         message.innerText = ``;
+        setTimeout(() =>{
+          logIn.style.display="none";
+          successMessage.innerText = `Congratulations You are successfully logged in`;
+        },3000);
+        
     }
 })
 
