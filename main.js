@@ -14,13 +14,13 @@ let logIn = document.getElementById("log-in");
 
 var successMessage = document.querySelector(".success-text");
 
-toggleButton.addEventListener("click" , function (){
-    if (passwordInput.type === 'password'){
+toggleButton.addEventListener("click", function () {
+    if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
         icon.classList.add("ri-eye-line");
         icon.classList.remove("ri-eye-off-line");
     }
-    else{
+    else {
         passwordInput.type = 'password';
         icon.classList.add("ri-eye-off-line");
         icon.classList.remove("ri-eye-line");
@@ -31,21 +31,33 @@ toggleButton.addEventListener("click" , function (){
 
 // password length
 
-logBtn.addEventListener("click" , function(){
+logBtn.addEventListener("click", function () {
     if (passwordInput.value.length < 6) {
         message.classList.add('text-red-600');
         message.innerText = `fill the password with 6 charecters`;
     }
-    else{
+    else {
         message.classList.remove('text-red-800');
         message.innerText = ``;
-        setTimeout(() =>{
-          logIn.style.display="none";
-          successMessage.innerText = `Congratulations You are successfully logged in`;
-        },3000);
-        
+        setTimeout(() => {
+            logIn.style.display = "none";
+            successMessage.innerText = `Congratulations You are successfully logged in`;
+        }, 3000);
+
     }
 })
 
 // ----------------------------
 
+// forget password reset form
+function resetPassword() {
+    logIn.reset();
+}
+// ----------------------
+
+// registration
+
+function signUp() {
+    logIn.classList.add('hidden');
+    document.querySelector(".registration-form").classList.add('block');
+}
