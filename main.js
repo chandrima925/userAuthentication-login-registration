@@ -37,7 +37,6 @@ logBtn.addEventListener("click", function () {
         message.innerText = `fill the password with 6 charecters`;
     }
     else {
-        message.classList.remove('text-red-800');
         message.innerText = ``;
         setTimeout(() => {
             logIn.style.display = "none";
@@ -59,5 +58,56 @@ function resetPassword() {
 
 function signUp() {
     logIn.classList.add('hidden');
+    logIn.classList.remove('block');
     document.querySelector(".registration-form").classList.add('block');
+    document.querySelector(".registration-form").classList.remove('hidden');
 }
+function logAction() {
+    logIn.classList.add('block');
+    logIn.classList.remove('hidden');
+    document.querySelector(".registration-form").classList.remove('block');
+    document.querySelector(".registration-form").classList.add('hidden');
+}
+
+let createPassword = document.querySelector("#create-password");
+let confirmPassword = document.querySelector("#confirm-password");
+let eyeToggle = document.querySelector("#eyeToggle");
+
+
+eyeToggle.addEventListener("click", function () {
+    if (confirmPassword.type === 'password') {
+        confirmPassword.type = 'text';
+        document.querySelector("#eyeBtn").classList.add("ri-eye-line");
+        document.querySelector("#eyeBtn").classList.remove("ri-eye-off-line");
+    }
+    else {
+        confirmPassword.type = 'password';
+        document.querySelector("#eyeBtn").classList.add("ri-eye-off-line");
+        document.querySelector("#eyeBtn").classList.remove("ri-eye-line");
+    }
+})
+
+let signUpBtn = document.getElementById("signUp-btn");
+let alertMessage = document.getElementById("alertMessage");
+
+signUpBtn.addEventListener("click", function () {
+
+    switch (true) {
+        case confirmPassword.value.length < 6:
+            alertMessage.classList.add('text-red-600');
+            alertMessage.innerText = `Fill the password with at least 6 characters`;
+            break;
+
+        case !(createPassword.value === confirmPassword.value):
+            alertMessage.classList.add('text-red-600');
+            alertMessage.innerText = `Fill the same password`;
+            break;
+
+        default:
+            alertMessage.innerText = ``;
+            break;
+    }
+
+})
+
+
