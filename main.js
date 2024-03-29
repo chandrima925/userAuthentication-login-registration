@@ -41,7 +41,7 @@ logBtn.addEventListener("click", function () {
         setTimeout(() => {
             logIn.style.display = "none";
             successMessage.innerText = `Congratulations You are successfully logged in`;
-        }, 3000);
+        }, 1000);
 
     }
 })
@@ -105,6 +105,12 @@ signUpBtn.addEventListener("click", function () {
 
         default:
             alertMessage.innerText = ``;
+
+            setTimeout(() => {
+                document.getElementById("registration").style.display = "none";
+                successMessage.innerText = `Congratulations your registration is successfull`;
+            }, 1000);
+
             break;
     }
 
