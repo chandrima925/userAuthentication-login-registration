@@ -26,7 +26,7 @@ toggleButton.addEventListener("click", function () {
         icon.classList.remove("ri-eye-line");
     }
 })
-
+ 
 // ------------------------------------------------ 
 
 // password length
