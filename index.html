@@ -31,8 +31,7 @@
         </div>
         <div class="form-section flex flex-col relative">
             <label for="password" class="font-medium text-slate-800">Password</label>
-            <input type="password" name="password" id="password" Enter your password
-                class="w-full p-2 border rounded-md" required>
+            <input type="password" name="password" id="password" placeholder="Enter your password" class="w-full p-2 border rounded-md" required>
             <button type="button" id="btnToggle" class="toggle absolute top-[50%] left-[90%]"><i
                     class="ri-eye-off-line text-blue-500" id="eyeIcon"></i></button>
         </div>
@@ -46,7 +45,7 @@
                 <p class="text-blue-700" onclick="resetPassword()">Forgot Password?</p>
             </div>
         </div>
-        <button type="submit" class="w-full bg-blue-700 text-white p-2 rounded-md" id="logIn">Log In</button>
+        <button type="submit" class="w-full bg-blue-700 text-white p-2 rounded-md" id="logBtn">Log In</button>
         <small class="text-center">Don't have account?<span class="text-blue-700" onclick="signUp()"> Signup
                 now</span></small>
     </form>

@@ -6,13 +6,13 @@ let passwordInput = document.querySelector("#password");
 
 let icon = document.querySelector("#eyeIcon");
 
-let logBtn = document.getElementById("logIn");
+let logBtn = document.getElementById("logBtn");
 
 let message = document.getElementById("alertText");
 
 let logIn = document.getElementById("log-in");
 
-var successMessage = document.querySelector(".success-text");
+let successMessage = document.querySelector(".success-text");
 
 toggleButton.addEventListener("click", function () {
     if (passwordInput.type === 'password') {
@@ -40,7 +40,7 @@ logBtn.addEventListener("click", function () {
         message.innerText = ``;
         setTimeout(() => {
             logIn.classList.add('hidden');
-            logIn.classList.remove('block')
+            logIn.classList.remove('block');
             successMessage.innerText = `Congratulations You are successfully logged in`;
         }, 3000);
 
@@ -108,7 +108,8 @@ signUpBtn.addEventListener("click", function () {
             alertMessage.innerText = ``;
 
             setTimeout(() => {
-                document.getElementById("registration").style.display = "none";
+                document.querySelector(".registration-form").classList.remove('block');
+                document.querySelector(".registration-form").classList.add('hidden');
                 successMessage.innerText = `Congratulations your registration is successfull`;
             }, 3000);
 
